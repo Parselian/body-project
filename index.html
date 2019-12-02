@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="fixed-gift">
-    <img src=images/gift.png alt>
+    <img class="fixed-gift__img" src="images/gift.png" alt>
 </div>
 <header class="header-main">
     <div class="head">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="club-select">
                         <div class="clubs-list">
-                            <p>Выбрать клуб</p>
+                            <p class="clubs-list__title">Выбрать клуб</p>
                             <ul>
                                 <li><a href="./mozaika.html">Тело мозаика</a></li>
                                 <li><a href="./schelkovo.html">Тело щелково</a></li>
@@ -43,7 +43,7 @@
                             <span>Звоните круглосуточно!</span>
                             <p>+7 (800) 555-64-47</p>
                         </div>
-                        <button class="btn callback-btn" data-popup="#callback_form">Перезвоните мне</button>
+                        <button id="header-callback__btn" class="btn callback-btn" data-popup="#callback_form">Перезвоните мне</button>
                     </div>
                 </div>
             </div>
@@ -471,12 +471,10 @@
                 <h4>Записаться на визит</h4>
                 <input type="hidden" name="form_name" value=" Записаться на визит">
                 <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
-                <p class="input-text"><input type="tel" name="phone" id="callback_form2-phone" required
-                                             placeholder="Ваш номер телефона..."></p>
+                <p class="input-text"><input type="tel" name="phone" id="callback_form2-phone" required placeholder="Ваш номер телефона..."></p>
                 <p class="personal-data">
                     <input type="checkbox" required id="check2"><label for="check2">Я согласен на обработку <br>персональных
                     данных</label>
-
                 </p>
                 <button name="send1" class="btn btn-send" type="submit">записаться</button>
             </form>
@@ -514,5 +512,6 @@
 
 </div>
 
+<script src="js/script.js"></script>
 </body>
 </html>
