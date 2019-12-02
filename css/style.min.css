@@ -169,6 +169,10 @@ select {
   vertical-align: middle
 }
 
+input:focus {
+  outline: none;
+}
+
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -1305,7 +1309,11 @@ nav.popup-menu .close-menu-btn img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: .3s;
 }
 
 .main-slider .slide .slide-text {
@@ -2258,6 +2266,16 @@ p.personal-data input[type=checkbox]:checked+label:before {
 .show {
   display: block !important;
 }
+
+.show-flex {
+  display: flex !important;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 
 @media only screen and (max-width:1199px) {
   .services-slider .slider-arrow.prev {

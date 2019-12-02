@@ -27,11 +27,30 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
         case target.closest('.close-btn, .close_icon, .overlay'):
           freeVisitForm.classList.remove('show');
-          giftModal.classList.remove('show');
+          if(!!giftModal) {
+            giftModal.classList.remove('show');
+          }
           callbackForm.classList.remove('show');
           break;
       }
     });
   };
   toggleModals();
+
+  //слайдер
+  const slider = (selector) => {
+    const slide = document.querySelectorAll(selector);
+    let intervalId,
+        counter = 0;
+
+    intervalId = setInterval(() => {
+      slide[counter].classList.remove('fade-in');
+      counter++;
+      if( counter >= slide.length ) {
+        counter = 0;
+      }
+      slide[counter].classList.add('fade-in');
+    }, 3000);
+  };
+  slider('.main-slider > .slide');
 });
