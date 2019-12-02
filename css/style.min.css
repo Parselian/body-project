@@ -290,6 +290,10 @@ html#schelkovo .head-slider {
   background: url(../images/head-slider-bg2.png) no-repeat center top
 }
 
+.wrapper {
+  position: relative;
+}
+
 html#mozaika .head-slider .wrapper,
 html#schelkovo .head-slider .wrapper {
   max-height: 400px;
@@ -1393,24 +1397,25 @@ nav.popup-menu .close-menu-btn img {
   bottom: 50px;
   left: 50%;
   margin-left: -65px;
-  z-index: 1000
+  z-index: 100000
 }
 
 .slider-dots li {
   float: left
 }
 
-.slider-dots li button {
+.slider-dots li.slider-dots__dot {
   width: 22px;
   height: 4px;
   background-color: #fff;
   border: none;
   border-radius: 2px;
   color: transparent;
-  margin-right: 5px
+  margin-right: 5px;
+  cursor: pointer;
 }
 
-.slider-dots li.slick-active button {
+.slider-dots li.slider-dots__dot_active {
   background-color: #ffd11a
 }
 
@@ -1617,13 +1622,22 @@ nav.popup-menu .close-menu-btn img {
   padding-left: 75px;
   padding-right: 75px;
   max-width: 900px;
+  min-height: 450px;
   margin: 0 auto;
-  text-align: center
+  text-align: center;
+  position: relative;
 }
 
 #gallery .gallery-slider .slide {
   margin: 0 auto !important;
-  width: 100%
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
 }
 
 #gallery .gallery-slider .slider-arrow {
@@ -1634,7 +1648,7 @@ nav.popup-menu .close-menu-btn img {
   cursor: pointer
 }
 
-#gallery .gallery-slider .slider-arrow span {
+#gallery .gallery-slider .slider-arrow {
   display: block;
   width: 36px;
   height: 37px;
@@ -1655,7 +1669,7 @@ nav.popup-menu .close-menu-btn img {
 #gallery .gallery-slider .slider-dots {
   left: 50%;
   margin-left: -65px;
-  bottom: 5%
+  bottom: 10%
 }
 
 #cards {
