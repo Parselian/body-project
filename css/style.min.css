@@ -663,6 +663,10 @@ html#schelkovo #cards #card_order .form-bottom p.submit {
   padding-left: 10px
 }
 
+#services {
+  overflow: hidden;
+}
+
 html#mozaika #services,
 html#schelkovo #services {
   padding-bottom: 50px
@@ -1556,18 +1560,27 @@ nav.popup-menu .close-menu-btn img {
   margin-right: 5px
 }
 
+.services-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
 .services-slider {
-  display: flex;
   margin: 0 auto;
+  margin-left: 0;
   padding-left: 15px;
-  padding-right: 15px
+  padding-right: 15px;
+  display: flex;
+  width: 10000px;
+  overflow: hidden;
+  transition: .3s;
 }
 
 .services-slider .slide {
   text-align: center;
   margin-right: 6px;
   margin-left: 6px;
-  width: 210px
+  width: 218px;
 }
 
 .services-slider .slide img {
@@ -1594,20 +1607,21 @@ nav.popup-menu .close-menu-btn img {
 
 .services-slider .slider-arrow {
   position: absolute;
-  top: 75px;
+  top: 50%;
+  transform: translateY(-50%);
   margin-top: -18px;
   z-index: 100;
-  cursor: pointer
-}
-
-.services-slider .slider-arrow span {
-  display: block;
+  cursor: pointer;
   width: 36px;
   height: 37px;
   background-color: #f4c71b;
   border-radius: 50%;
-  text-align: center;
-  padding-top: 11px
+}
+
+.services-slider .slider-arrow img {
+  display: block;
+  margin: auto;
+  padding-top: 10px;
 }
 
 .services-slider .slider-arrow.prev {

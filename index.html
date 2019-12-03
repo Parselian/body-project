@@ -217,9 +217,15 @@
     </div>
 </section>
 <section id="services">
-    <div class="wrapper">
+    <div class="wrapper services-wrapper">
         <h2>услуги наших клубов</h2>
         <div class="services-slider">
+            <div class="slider-arrow next">
+                <img src="../images/arrow-right.png" alt=">">
+            </div>
+            <div class="slider-arrow prev">
+                <img src="../images/arrow-left.png" alt="<">
+            </div>
             <div class="slide">
                 <img src="images/services-slider/akva.jpg" alt="Аква территория">
                 <h6>Аква территория</h6>
@@ -314,7 +320,7 @@
                 <img src="images/cards.png" alt="Клубные карты">
             </div>
             <div class="right">
-                <form action="" id="card_order">
+                <form action="" id="card_order" class="calculator">
                     <div class="time">
                         <input id="m1" type="radio" name="card-type" value="1" checked>
                         <label for="m1">1 месяц</label>
@@ -341,10 +347,12 @@
                     </label>
                     </div>
                     <div class="price">
-                        <div class="price-message input-text"><input name="name" type="text" required
-                        placeholder="Промокод"></div>
+                        <div class="price-message input-text">
+                            <input id="promocode" name="name" type="text" required
+                        placeholder="Промокод">
+                        </div>
                         <div class="price-message">Цена:</div>
-                        <div class="price-message" id="price-total">2999</div>
+                        <div class="price-message" id="price-total">1999</div>
                     </div>
                     <input type="hidden" name="form_name" value="Заказать карту">
                     <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>

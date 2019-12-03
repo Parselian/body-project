@@ -41,6 +41,43 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   toggleModals();
 
+  //управление стрелкой скролла к главному экрану
+  const manageArrow = () => {
+    const header = document.querySelector('header'),
+          toTopArrow = document.getElementById('totop'),
+          breakpoint = header.getBoundingClientRect().height;
+    
+    window.addEventListener('scroll', () => {
+      if( window.scrollY >= breakpoint ) {
+        toTopArrow.className = 'show';
+      } else {
+        toTopArrow.className = '';
+      }
+    });
+  };
+  manageArrow();
+
+  //управление бургер-меню
+  const manageBurger = () => {
+    const burgerBtn = document.querySelector('.menu-button'),
+          topMenu = document.querySelector('.top-menu'),
+          breakpoint = topMenu.getBoundingClientRect().y;
+
+    window.addEventListener('scroll', () => {
+      if( document.documentElement.clientWidth <= 768 ) {
+        if( topMenu.getBoundingClientRect().y < 0 ) {
+          burgerBtn.closest('.top-menu').classList.add('fixed-menu__button');
+        }
+        if( window.scrollY < breakpoint ) {
+          burgerBtn.closest('.top-menu').classList.remove('fixed-menu__button');
+        }
+      } else if( document.documentElement.clientWidth > 769 ) {
+        burgerBtn.closest('.top-menu').classList.remove('fixed-menu__button');
+      }
+    });
+  };
+  manageBurger();
+
   //слайдер
   const slider = (selector) => {
     const wrapSlider = document.querySelector(selector),
@@ -123,42 +160,78 @@ document.addEventListener('DOMContentLoaded', () => {
   slider('.main-slider');
   slider('.gallery-slider');
 
-  //управление бургер-меню
-  const manageBurger = () => {
-    const burgerBtn = document.querySelector('.menu-button'),
-          topMenu = document.querySelector('.top-menu'),
-          breakpoint = topMenu.getBoundingClientRect().y;
+  //слайдер-карусель
+  const sliderCarousel = () => {
+    const sliderWrap = document.querySelector('.services-slider'),
+          allSlides = sliderWrap.querySelectorAll('.slide'),
+          slideWidth = allSlides[0].getBoundingClientRect().width,
+          slidesToScroll = 1;
+          
+    let position = 0,
+        counter = 0;
 
-    window.addEventListener('scroll', () => {
+    sliderWrap.addEventListener('click', (e) => {
+      const target = e.target;
 
-      if( window.innerWidth <= 768 ) {
-        if( topMenu.getBoundingClientRect().y <= 0 ) {
-          burgerBtn.classList.remove('hidden-large');
-          burgerBtn.closest('.top-menu').classList.add('fixed-menu__button');
-        }
-        if( window.scrollY < breakpoint ) {
-          burgerBtn.closest('.top-menu').classList.remove('fixed-menu__button');
-        }
-      } else {
-        burgerBtn.classList.add('hidden-large');
+      switch(target) {
+        case target.closest('.slider-arrow.prev'):
+          counter--;
+          position += slideWidth * slidesToScroll;
+          sliderWrap.style.marginLeft = `${position}px`;
+          console.log(position);
+          if( counter < 0 ) {
+            counter = allSlides.length;
+            sliderWrap.style.marginLeft = `-${slideWidth * 5}px`;
+            console.log(counter);
+          }
+          break;
+        case target.closest('.slider-arrow.next'):
+          position -= slideWidth * slidesToScroll;
+          sliderWrap.style.marginLeft = `${position}px`;
+          console.log(position);
+          break;
       }
     });
   };
-  manageBurger();
+  // sliderCarousel();
 
-  //управление стрелкой скролла к главному экрану
-  const manageArrow = () => {
-    const header = document.querySelector('header'),
-          toTopArrow = document.getElementById('totop'),
-          breakpoint = header.getBoundingClientRect().height;
-    
-    window.addEventListener('scroll', () => {
-      if( window.scrollY >= breakpoint ) {
-        toTopArrow.className = 'show';
-      } else {
-        toTopArrow.className = '';
-      }
-    });
+  //калькулятор
+  const calculator = () => {
+    const calculator = document.querySelector('.calculator'),
+          timeInputs = document.querySelectorAll('input[name="card-type"]'),
+          cardLetoMozaika = document.getElementById('card_leto_mozaika'),
+          promocode = document.getElementById('promocode'),
+          priceTotal = document.getElementById('price-total');
+    if( calculator ) {
+      calculator.addEventListener('input', () => {
+        let selectedCardPrice;
+  
+        timeInputs.forEach(item => {
+          if( item.checked ) {
+            switch (+item.value) {
+              case 1:
+                selectedCardPrice = cardLetoMozaika.checked ? 1999 : 2999;
+                break;
+              case 6:
+                selectedCardPrice = cardLetoMozaika.checked ? 9990 : 14990;
+                break;
+              case 9:
+                selectedCardPrice = cardLetoMozaika.checked ? 13900 : 21990;
+                break;
+              case 12:
+                selectedCardPrice = cardLetoMozaika.checked ? 19900 : 24990;
+                break;
+            }
+          }
+        });
+  
+        if(promocode.value === 'ТЕЛО2019' ) {
+          priceTotal.textContent = Math.floor(selectedCardPrice * 0.7);
+        } else {
+          priceTotal.textContent = selectedCardPrice;
+        }
+      });
+    }
   };
-  manageArrow();
+  calculator();
 });
