@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const clubsList = document.querySelector('.clubs-list > ul'),
           freeVisitForm = document.getElementById('free_visit_form'),
           callbackForm = document.getElementById('callback_form'),
+          menu = document.querySelector('.popup-menu'),
           giftModal = document.getElementById('gift');
 
     document.addEventListener('click', (e) => {
@@ -24,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         case target.closest('.fixed-gift__img'):
           target.closest('.fixed-gift').remove();
           giftModal.classList.add('show');
+          break;
+        case target.closest('.menu-button__img, .close-menu-btn__img, .popup-menu > ul > li > a'): 
+          menu.classList.toggle('show-flex');
           break;
         case target.closest('.close-btn, .close_icon, .overlay'):
           freeVisitForm.classList.remove('show');
@@ -122,12 +126,24 @@ document.addEventListener('DOMContentLoaded', () => {
   //управление бургер-меню
   const manageBurger = () => {
     const burgerBtn = document.querySelector('.menu-button'),
-          burgerMenu = document.querySelector('.popup-menu')
-    // if( window.innerWidth <= 768 ) {
-    //   burgerBtn.classList.remove('hidden-large');
-    // } else {
-    //   burgerBtn.classList.add('hidden-large');
-    // }
+          topMenu = document.querySelector('.top-menu'),
+          burgerMenu = document.querySelector('.popup-menu'),
+          breakpoint = topMenu.getBoundingClientRect().y;
+
+    window.addEventListener('scroll', () => {
+
+      if( window.innerWidth <= 768 ) {
+        if( topMenu.getBoundingClientRect().y <= 0 ) {
+          burgerBtn.classList.remove('hidden-large');
+          burgerBtn.closest('.top-menu').classList.add('fixed-menu__button');
+        }
+        if( window.scrollY < breakpoint ) {
+          burgerBtn.closest('.top-menu').classList.remove('fixed-menu__button');
+        }
+      } else {
+        burgerBtn.classList.add('hidden-large');
+      }
+    });
   };
   manageBurger();
 });

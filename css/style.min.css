@@ -840,7 +840,7 @@ html#schelkovo .advantages .wrapper {
 
 .fixed-gift {
   position: fixed;
-  z-index: 5555;
+  z-index: 9999991;
   display: inline;
   top: 15px;
   right: 20px;
@@ -1116,7 +1116,6 @@ header .head .call .btn {
 }
 
 header nav.top-menu {
-  z-index: 4444;
   top: 0;
   left: 0;
   width: 100%;
@@ -1124,10 +1123,19 @@ header nav.top-menu {
   background-color: #000;
   background-image: -webkit-gradient(linear, left top, right top, from(#230a16), to(#0c0b15));
   background-image: linear-gradient(to right, #230a16 0%, #0c0b15 100%)
+  z-index: 999999;
 }
 
 header nav.top-menu .menu-button {
-  text-align: right
+  text-align: right;
+  z-index: 999999;
+}
+
+.fixed-menu__button {
+  top: 0;
+  right: 10px;
+  position: fixed;
+  z-index: 999999;
 }
 
 header nav.top-menu .menu-button img {
@@ -1212,7 +1220,7 @@ nav.popup-menu {
   background-image: linear-gradient(to right, #230a16 0%, #0c0b15 100%);
   height: 100vh;
   width: 100vw;
-  z-index: 6666;
+  z-index: 9999992;
   left: 0;
   top: 0
 }
@@ -1246,8 +1254,8 @@ nav.popup-menu ul li a:hover {
 nav.popup-menu .close-menu-btn {
   text-align: right;
   top: -45px;
-  padding-top: 5px;
-  padding-right: 15px;
+  padding-top: 10px;
+  padding-right: 25px;
   cursor: pointer;
   -webkit-transition: all 0.3s;
   transition: all 0.3s
