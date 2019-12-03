@@ -2107,7 +2107,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   left: 0;
   top: 20vh;
   right: 0;
-  z-index: 1200;
+  z-index: 120001;
   width: 380px;
   height: 355px
 }

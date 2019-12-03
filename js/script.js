@@ -119,4 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
   slider('.main-slider');
   slider('.gallery-slider');
 
+  //управление бургер-меню
+  const manageBurger = () => {
+    const burgerBtn = document.querySelector('.menu-button'),
+          burgerMenu = document.querySelector('.popup-menu')
+    // if( window.innerWidth <= 768 ) {
+    //   burgerBtn.classList.remove('hidden-large');
+    // } else {
+    //   burgerBtn.classList.add('hidden-large');
+    // }
+  };
+  manageBurger();
 });
