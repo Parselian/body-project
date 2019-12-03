@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const manageBurger = () => {
     const burgerBtn = document.querySelector('.menu-button'),
           topMenu = document.querySelector('.top-menu'),
-          burgerMenu = document.querySelector('.popup-menu'),
           breakpoint = topMenu.getBoundingClientRect().y;
 
     window.addEventListener('scroll', () => {
@@ -146,4 +145,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   manageBurger();
+
+  //управление стрелкой скролла к главному экрану
+  const manageArrow = () => {
+    const header = document.querySelector('header'),
+          toTopArrow = document.getElementById('totop'),
+          breakpoint = header.getBoundingClientRect().height;
+    
+    window.addEventListener('scroll', () => {
+      if( window.scrollY >= breakpoint ) {
+        toTopArrow.className = 'show';
+      } else {
+        toTopArrow.className = '';
+      }
+    });
+  };
+  manageArrow();
 });
