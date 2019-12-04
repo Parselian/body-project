@@ -1568,19 +1568,23 @@ nav.popup-menu .close-menu-btn img {
 .services-slider {
   margin: 0 auto;
   margin-left: 0;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: flex;
-  width: 10000px;
+  /* padding-left: 15px;
+  padding-right: 15px; */
   overflow: hidden;
+}
+
+.services-slider-wrap {
+  display: flex;
+  width: 100%;
   transition: .3s;
 }
 
 .services-slider .slide {
-  text-align: center;
   margin-right: 6px;
   margin-left: 6px;
-  width: 218px;
+  flex: 0 0 20%;
+  margin: 0;
+  text-align: center;
 }
 
 .services-slider .slide img {
@@ -2320,6 +2324,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
   .services-slider .slider-arrow.next {
     right: 20px
   }
+
+  .services-slider .slide {
+    flex: 0 0 25%;
+  }
 }
 
 @media only screen and (max-width:1199px) {
@@ -2428,6 +2436,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
 
   .services-slider .slider-arrow.next {
     right: 3px
+  }
+
+  .services-slider .slide {
+    flex: 0 0 33%;
   }
 }
 
@@ -2569,6 +2581,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
     -ms-flex-pack: center;
     justify-content: center
   }
+
+  .services-slider .slide {
+    flex: 0 0 50%;
+  }
 }
 
 @media only screen and (max-width:580px) {
@@ -2700,7 +2716,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
   .popup .form-content input[type="tel"] {
     width: 80vw
   }
+  .services-slider .slide {
+    flex: 0 0 100%;
+  }
 }
+
 
 @media only screen and (max-width:390px) {
   header .head .head-main .left {

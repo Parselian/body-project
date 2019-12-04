@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   slider('.gallery-slider');
 
   //слайдер-карусель
-  // sliderCarousel();
+  sliderCarousel();
 
   //калькулятор
   calculator();

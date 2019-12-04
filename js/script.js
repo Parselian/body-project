@@ -163,32 +163,37 @@ document.addEventListener('DOMContentLoaded', () => {
   //слайдер-карусель
   const sliderCarousel = () => {
     const sliderWrap = document.querySelector('.services-slider'),
+          slidesWrap = document.querySelector('.services-slider-wrap'),
           allSlides = sliderWrap.querySelectorAll('.slide'),
           slideWidth = allSlides[0].getBoundingClientRect().width,
-          slidesToScroll = 1;
-          
-    let position = 0,
-        counter = 0;
-
+          slidesToShow = 5;
+      
+    let position = 0;
+  
     sliderWrap.addEventListener('click', (e) => {
       const target = e.target;
-
+  
       switch(target) {
         case target.closest('.slider-arrow.prev'):
-          counter--;
-          position += slideWidth * slidesToScroll;
-          sliderWrap.style.marginLeft = `${position}px`;
-          console.log(position);
-          if( counter < 0 ) {
-            counter = allSlides.length;
-            sliderWrap.style.marginLeft = `-${slideWidth * 5}px`;
-            console.log(counter);
+          if( position > 0 ) {
+            --position;
+  
+            if( position < 0 ) {
+              position = allSlides.length - slidesToShow;
+            }
+            slidesWrap.style.transform = `translateX(-${slideWidth}%)`;
           }
           break;
         case target.closest('.slider-arrow.next'):
-          position -= slideWidth * slidesToScroll;
-          sliderWrap.style.marginLeft = `${position}px`;
-          console.log(position);
+          if( position < allSlides.length - slidesToShow ) {
+            ++position;
+  
+            if( position > allSlides.length - slidesToShow ) {
+              position = 0;
+            }
+  
+            slidesWrap.style.transform = `translateX(-${slideWidth}%)`;
+          }
           break;
       }
     });
