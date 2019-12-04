@@ -9,6 +9,7 @@ const sliderCarousel = () => {
 
   const checkResponse = () => {
     let maxWidth = window.innerWidth;
+    
     if( maxWidth < 1200 && maxWidth >= 991 ) {
       slidesToShow = 4;
     } 

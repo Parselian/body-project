@@ -6,10 +6,9 @@ import manageBurger from './modules/manageBurger';
 import slider from './modules/slider';
 import sliderCarousel from './modules/sliderCarousel';
 import calculator from './modules/calculator';
+import sendForm from './modules/sendForm';
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
   //управление всплывающими блоками
   toggleModals();
 
@@ -28,4 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //калькулятор
   calculator();
+
+  //отправка форм
+  sendForm();
 });
