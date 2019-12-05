@@ -72,11 +72,14 @@ const sendForm = (selector) => {
         popupSuccess.classList.add('show');
 
         formInputs.forEach(item => {
-          if( item.type === 'checkbox' ) {
+          if( item.type === 'radio' ) {
+            return;
+          } else if( item.type === 'checkbox' ) {
             item.checked = false;
+          } else {
+            item.value = '';
           }
 
-          item.value = '';
         });
       })
       .catch( error => {

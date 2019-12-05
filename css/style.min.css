@@ -2321,12 +2321,12 @@ p.personal-data input[type=checkbox]:checked+label:before {
   margin-right: auto;
   width: 26px;
   height: 26px;
-  border: 2px dashed #fff;
+  border: 2px dashed gray;
   border-radius: 13px;
 }
 
 .check_error {
-  color: #ffffff;
+  color: red;
 }
 
 @media only screen and (max-width:1199px) {
