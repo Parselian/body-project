@@ -8,6 +8,8 @@ import sliderCarousel from './modules/sliderCarousel';
 import calculator from './modules/calculator';
 import maskPhone from './modules/maskPhone';
 import sendForm from './modules/sendForm';
+import smoothScroll from './modules/smoothScroll';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   //управление всплывающими блоками
@@ -18,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //управление бургер-меню
   manageBurger();
+
+  //плавный скролл до якорей
+  smoothScroll();
 
   //слайдер
   slider('.main-slider');
