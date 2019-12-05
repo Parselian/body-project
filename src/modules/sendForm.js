@@ -31,13 +31,12 @@ const sendForm = (selector) => {
     form.addEventListener('input', (e) => {
       const target = e.target;
 
-      switch( target.name ) {
-        case 'name': 
-          target.value = target.value.replace(/[^а-я|А-Я| ]/g, ''); 
-          break;
-        case 'phone':
-          target.value = target.value.replace(/^\D/g, ''); 
-          break;
+      if( target.id === 'promocode' ) {
+        return;
+      } else if( target.name === 'name' ) {
+        target.value = target.value.replace(/[^а-я|А-Я| ]/g, ''); 
+      } else if( target.name === 'phone' ) {
+        target.value = target.value.replace(/^\D/g, ''); 
       }
     });
   };
@@ -72,7 +71,7 @@ const sendForm = (selector) => {
         popupSuccess.classList.add('show');
 
         formInputs.forEach(item => {
-          if( item.type === 'radio' ) {
+          if( item.type === 'radio' || item.name === 'form_name') {
             return;
           } else if( item.type === 'checkbox' ) {
             item.checked = false;

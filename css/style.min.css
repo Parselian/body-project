@@ -2326,6 +2326,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
 }
 
 .check_error {
+  text-align: center;
   color: red;
 }
 
