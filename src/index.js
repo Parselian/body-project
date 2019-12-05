@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sendForm('form[name="free-visit-form"]');
   sendForm('form[name="banner-form"]');
   sendForm('#card_order');
+  sendForm('#footer_form');
 
 
 });

@@ -4,6 +4,8 @@ const sendForm = (selector) => {
         form = document.querySelector(selector),
         formInputs = form.querySelectorAll('input'),
         check = form.querySelector('.check'),
+        radioBtnMozaika = form.querySelector('#footer_leto_mozaika'),
+        radioBtnSchelkovo = form.querySelector('#footer_leto_schelkovo'),
         spinner = document.createElement('div'),
         checkAgreement = document.createElement('div');
   
@@ -48,7 +50,7 @@ const sendForm = (selector) => {
 
     const formData = new FormData(form);
     
-    if( check.checked ) {
+    if( (check && check.checked) || (radioBtnSchelkovo && radioBtnSchelkovo.checked) || (radioBtnMozaika && radioBtnMozaika.checked) ) {
       animateSpinner();
 
       const pushData = (formData) => {
