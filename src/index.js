@@ -39,5 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //отправка форм
   sendForm('form[name="callback-form"]');
   sendForm('form[name="free-visit-form"]');
+  sendForm('form[name="banner-form"]');
 
 });
