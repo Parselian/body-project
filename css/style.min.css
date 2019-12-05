@@ -2288,7 +2288,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
   width: 90%;
   color: #fff;
   font-weight: 500;
-  margin-top: 30px
+  /* margin-top: 30px */
 }
 
 #thanks .form-content .close-btn {
