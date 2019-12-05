@@ -1126,7 +1126,7 @@ header nav.top-menu {
   min-height: 50px;
   background-color: #000;
   background-image: -webkit-gradient(linear, left top, right top, from(#230a16), to(#0c0b15));
-  background-image: linear-gradient(to right, #230a16 0%, #0c0b15 100%)
+  background-image: linear-gradient(to right, #230a16 0%, #0c0b15 100%);
   z-index: 999999;
 }
 
@@ -2122,7 +2122,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1020
+  z-index: 999991
 }
 
 .popup .form-wrapper {
@@ -2132,7 +2132,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   left: 0;
   top: 20vh;
   right: 0;
-  z-index: 120001;
+  z-index: 999992;
   width: 380px;
   height: 355px
 }
@@ -2280,7 +2280,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
   background-color: #fff
 }
 
-#thanks .form-content p {
+#error,#thanks .form-content p {
   font-size: 20px;
   width: 90%;
   color: #fff;
@@ -2315,6 +2315,19 @@ p.personal-data input[type=checkbox]:checked+label:before {
   visibility: visible !important;
 }
 
+.spinner {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 26px;
+  height: 26px;
+  border: 2px dashed #fff;
+  border-radius: 13px;
+}
+
+.check_error {
+  color: #ffffff;
+}
 
 @media only screen and (max-width:1199px) {
   .services-slider .slider-arrow.prev {

@@ -3,6 +3,7 @@ const toggleModals = () => {
         freeVisitForm = document.getElementById('free_visit_form'),
         callbackForm = document.getElementById('callback_form'),
         menu = document.querySelector('.popup-menu'),
+        allModals = document.querySelectorAll('.popup'),
         giftModal = document.getElementById('gift');
 
   document.addEventListener('click', (e) => {
@@ -26,11 +27,9 @@ const toggleModals = () => {
         menu.classList.toggle('show-flex');
         break;
       case target.closest('.close-btn, .close_icon, .overlay'):
-        freeVisitForm.classList.remove('show');
-        if(!!giftModal) {
-          giftModal.classList.remove('show');
-        }
-        callbackForm.classList.remove('show');
+        allModals.forEach(item => {
+          item.classList.remove('show');
+        });
         break;
     }
   });

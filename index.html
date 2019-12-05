@@ -466,13 +466,15 @@
                 <h4>Обратный звонок</h4>
                 <input type="hidden" name="form_name" value=" Обратный звонок">
                 <!--  <input type="hidden" name="club" value="<?=$_GET['club-name']?>"> -->
-                <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
-                <p class="input-text"><input type="tel" name="phone" id="callback_form1-phone" required
-                                             placeholder="Ваш номер телефона..."></p>
+                <p class="input-text">
+                    <input name="name" type="text" required placeholder="Ваше имя...">
+                </p>
+                <p class="input-text">
+                    <input type="tel" name="phone" id="callback_form1-phone" required placeholder="Ваш номер телефона...">
+                </p>
                 <p class="personal-data">
-                    <input type="checkbox" required id="check"><label for="check">Я согласен на обработку <br>персональных
+                    <input class="check" type="checkbox" id="check"><label for="check">Я согласен на обработку <br>персональных
                     данных</label>
-
                 </p>
                 <button name="send1" class="btn btn-send" type="submit">Перезвоните мне</button>
             </form>
@@ -494,12 +496,11 @@
                 <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
                 <p class="input-text"><input type="tel" name="phone" id="callback_form2-phone" required placeholder="Ваш номер телефона..."></p>
                 <p class="personal-data">
-                    <input type="checkbox" required id="check2"><label for="check2">Я согласен на обработку <br>персональных
+                    <input class="check" type="checkbox" id="check2"><label for="check2">Я согласен на обработку <br>персональных
                     данных</label>
                 </p>
                 <button name="send1" class="btn btn-send" type="submit">записаться</button>
             </form>
-
         </div>
     </div>
 </div>
@@ -513,6 +514,20 @@
         <div class="form-content">
             <h4>Спасибо!</h4>
             <p>Ваша заявка отправлена. <br> Мы свяжемся с вами в ближайшее время.</p>
+            <button class="btn close-btn">OK</button>
+        </div>
+    </div>
+</div>
+<div class="popup" id="error">
+    <div class="overlay">
+    </div>
+    <div class="form-wrapper">
+        <div class="close-form">
+            <img src="images/close-icon.png" alt="close" class="close_icon">
+        </div>
+        <div class="form-content">
+            <h4>Что-то пошло не так!</h4>
+            <p>Ваша заявка не отправлена, <br> попробуйте позже.</p>
             <button class="btn close-btn">OK</button>
         </div>
     </div>
