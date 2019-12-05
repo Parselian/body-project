@@ -11,24 +11,24 @@ const toggleModals = () => {
 
     switch(target) {
       case target.closest('.clubs-list__title'):
-        clubsList.classList.toggle('show');
+        clubsList.classList.toggle('fade-in');
         break;
       case target.closest('.open-popup'):
-        freeVisitForm.classList.add('show');
+        freeVisitForm.classList.add('fade-in');
         break;
       case target.closest('#header-callback__btn'):
-        callbackForm.classList.add('show');
+        callbackForm.classList.add('fade-in');
         break;
       case target.closest('.fixed-gift__img'):
         target.closest('.fixed-gift').remove();
-        giftModal.classList.add('show');
+        giftModal.classList.add('fade-in');
         break;
       case target.closest('.menu-button__img, .close-menu-btn__img, .popup-menu > ul > li > a'): 
         menu.classList.toggle('show-flex');
         break;
       case target.closest('.close-btn, .close_icon, .overlay'):
         allModals.forEach(item => {
-          item.classList.remove('show');
+          item.classList.remove('fade-in');
         });
         break;
     }

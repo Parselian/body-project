@@ -67,10 +67,10 @@ const sendForm = (selector) => {
         clearInterval(intervalId);
         spinner.remove();
         if( response.status !== 200 ) {
-          popupError.classList.add('show');
+          popupError.classList.add('fade-in');
           throw new Error( 'Something wrong! network status isn`t 200' );
         }
-        popupSuccess.classList.add('show');
+        popupSuccess.classList.add('fade-in');
 
         formInputs.forEach(item => {
           if( item.type === 'radio' || item.name === 'form_name') {

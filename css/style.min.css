@@ -2112,7 +2112,10 @@ footer .footer-bottom .right .socials .social-icon:hover a {
 }
 
 .popup {
-  display: none
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s;
+  z-index: 9999999;
 }
 
 .popup .overlay {
@@ -2122,7 +2125,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 999991
+  z-index: 99999991
 }
 
 .popup .form-wrapper {
@@ -2132,7 +2135,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
   left: 0;
   top: 20vh;
   right: 0;
-  z-index: 999992;
+  z-index: 99999992;
   width: 380px;
   height: 355px
 }
