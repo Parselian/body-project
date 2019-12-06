@@ -1,6 +1,7 @@
 const calculator = () => {
   const calculator = document.querySelector('.calculator'),
         timeInputs = document.querySelectorAll('input[name="card-type"]'),
+        cardLetoSchelkovo = document.getElementById('card_leto_schelkovo'),
         cardLetoMozaika = document.getElementById('card_leto_mozaika'),
         promocode = document.getElementById('promocode'),
         priceTotal = document.getElementById('price-total');
@@ -9,7 +10,7 @@ const calculator = () => {
       let selectedCardPrice;
 
       timeInputs.forEach(item => {
-        if( item.checked ) {
+        if( item.checked && ( cardLetoSchelkovo.checked || cardLetoMozaika.checked ) ) {
           switch (+item.value) {
             case 1:
               selectedCardPrice = cardLetoMozaika.checked ? 1999 : 2999;
@@ -27,7 +28,7 @@ const calculator = () => {
         }
       });
 
-      if(promocode.value === 'ТЕЛО2019' ) {
+      if(promocode.value === 'ТЕЛО2019' && ( cardLetoSchelkovo.checked || cardLetoMozaika.checked ) ) {
         priceTotal.textContent = Math.floor(selectedCardPrice * 0.7);
       } else {
         priceTotal.textContent = selectedCardPrice;

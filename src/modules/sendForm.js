@@ -7,6 +7,7 @@ const sendForm = (selector) => {
         radioBtnMozaika = form.querySelector('#footer_leto_mozaika'),
         radioBtnSchelkovo = form.querySelector('#footer_leto_schelkovo'),
         spinner = document.createElement('div'),
+        priceTotal = document.getElementById('price-total'),
         checkAgreement = document.createElement('div');
   
   checkAgreement.textContent = 'Пожалуйста, поставьте галочку!';
@@ -78,9 +79,9 @@ const sendForm = (selector) => {
         popupSuccess.classList.add('fade-in');
 
         formInputs.forEach(item => {
-          if( item.type === 'radio' || item.name === 'form_name') {
+          if( item.name === 'form_name' ) {
             return;
-          } else if( item.type === 'checkbox' ) {
+          } else if( item.type === 'checkbox' || item.type === 'radio' ) {
             item.checked = false;
           } else if( radioBtnMozaika || radioBtnSchelkovo ) {
             radioBtnMozaika.checked = false;
@@ -88,8 +89,8 @@ const sendForm = (selector) => {
           } else {
             item.value = '';
           }
-
         });
+        priceTotal.textContent = '';
       })
       .catch( error => {
         console.error(error);
