@@ -1290,7 +1290,6 @@ nav.popup-menu .close-menu-btn img {
   right: 30px;
   bottom: 0;
   top: 0;
-  z-index: 200;
   width: 52vw;
   max-width: 979px;
   display: -moz-flex;
@@ -1309,7 +1308,6 @@ nav.popup-menu .close-menu-btn img {
   height: 100%;
   width: 100%;
   min-width: 979px;
-  z-index: 200
 }
 
 .main-slider {
@@ -1330,6 +1328,7 @@ nav.popup-menu .close-menu-btn img {
   visibility: hidden;
   position: absolute;
   transition: .3s;
+  z-index: 0;
 }
 
 .main-slider .slide .slide-text {
