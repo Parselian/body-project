@@ -48,22 +48,27 @@ const sendForm = (selector) => {
     e.preventDefault();
     checkAgreement.remove();
 
-    const formData = new FormData(form);
+    const formData = new FormData(form),
+          data = {};
+
+    formData.forEach((val, key) => {
+      data[key] = val;
+    });
     
     if( (check && check.checked) || (radioBtnSchelkovo && radioBtnSchelkovo.checked) || (radioBtnMozaika && radioBtnMozaika.checked) ) {
       animateSpinner();
 
-      const pushData = (formData) => {
+      const pushData = (data) => {
         return fetch('./server.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: formData
+          body: JSON.stringify(data)
         });
       };
 
-      pushData(formData).then( response => {
+      pushData(data).then( response => {
         clearInterval(intervalId);
         spinner.remove();
         if( response.status !== 200 ) {
@@ -77,6 +82,9 @@ const sendForm = (selector) => {
             return;
           } else if( item.type === 'checkbox' ) {
             item.checked = false;
+          } else if( radioBtnMozaika || radioBtnSchelkovo ) {
+            radioBtnMozaika.checked = false;
+            radioBtnSchelkovo.checked = false;
           } else {
             item.value = '';
           }

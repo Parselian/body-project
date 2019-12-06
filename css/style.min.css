@@ -2507,6 +2507,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
     margin-right: 15px
   }
 
+  .fixed-gift {
+    top: 70px;
+    right: 10px;
+  }
+
   #clubs .content {
     -ms-flex-wrap: wrap;
     -o-flex-wrap: wrap;

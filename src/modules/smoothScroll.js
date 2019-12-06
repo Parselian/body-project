@@ -10,14 +10,28 @@ const smoothScroll = () => {
         return;
       } 
       e.preventDefault();
-      let coordY;     
-
-      coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+      let coordY; 
+      
+      coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.scrollY;   
 
       const scrolling = setInterval( () => {
         let scrollBy = coordY / fps;
-        if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+
+        if (scrollBy > window.scrollY - coordY && window.innerHeight + window.scrollY < document.body.offsetHeight) {
           window.scrollBy(0, scrollBy);
+        } else if ( item.id === 'totop' ) {
+          const totop = setInterval(() => {
+            let top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+            if(top > 0) {
+              window.scrollBy(0, -50);
+            } else {
+              clearInterval(totop);
+              return false;
+            }
+          }, animationTime / fps);
+          
+          clearInterval(scrolling);
         } else {
           window.scrollTo(0, coordY);
           clearInterval(scrolling);
