@@ -1023,7 +1023,6 @@ header .head .club-select .clubs-list p {
 }
 
 header .head .club-select .clubs-list ul {
-  display: none;
   width: 180px;
   position: absolute;
   top: 60px;
@@ -1033,7 +1032,10 @@ header .head .club-select .clubs-list ul {
   padding: 15px;
   border: 1px solid #ffd11a;
   border-radius: 10px;
-  text-align: center
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s;
 }
 
 header .head .club-select .clubs-list ul li a {
