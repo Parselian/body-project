@@ -1,4 +1,5 @@
 const toggleModals = () => {
+  
   const clubsList = document.querySelector('.clubs-list > ul'),
         freeVisitForm = document.getElementById('free_visit_form'),
         callbackForm = document.getElementById('callback_form'),
