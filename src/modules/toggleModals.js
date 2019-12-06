@@ -24,11 +24,11 @@ const toggleModals = () => {
         giftModal.classList.add('fade-in');
         break;
       case target.closest('.menu-button__img, .close-menu-btn__img, .popup-menu > ul > li > a'): 
-        menu.classList.toggle('show-flex');
+        menu.classList.toggle('slide-burger-menu');
         break;
       case target.closest('.close-btn, .close_icon, .overlay'):
         allModals.forEach(item => {
-          item.classList.remove('fade-in');
+          item.classList.remove('fade-in', 'slide-burger-menu');
         });
         break;
     }

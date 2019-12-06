@@ -1218,7 +1218,7 @@ header .top-menu ul li:last-child:after {
 }
 
 nav.popup-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   position: fixed;
   background-color: #000;
@@ -1227,8 +1227,9 @@ nav.popup-menu {
   height: 100vh;
   width: 100vw;
   z-index: 9999992;
-  left: 0;
-  top: 0
+  left: -100vw;
+  top: 0;
+  transition: .3s;
 }
 
 nav.popup-menu ul {
@@ -2332,6 +2333,10 @@ p.personal-data input[type=checkbox]:checked+label:before {
 .check_error {
   text-align: center;
   color: red;
+}
+
+.slide-burger-menu {
+  left: 0 !important;
 }
 
 @media only screen and (max-width:1199px) {
